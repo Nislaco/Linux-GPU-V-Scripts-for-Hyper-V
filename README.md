@@ -39,6 +39,10 @@ Step 9 download and execute the provided build.sh; after this completes dkms sta
 Step 10 reboot the VM
 
 Step 11 Verify gpu via dmesg / lspci and or nvidia-smi.
+
+Step 12 install Nvidia cuda tool kit via:
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64
+Tested on Ubuntu 24 with ubuntu-wsl selection and Debian 12 with Debian Selection.
 ```
 
 
