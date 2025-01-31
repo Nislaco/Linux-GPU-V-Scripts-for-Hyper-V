@@ -1,5 +1,5 @@
 # Linux-GPU-V-Scripts-for-Hyper-V
-Notes and information for building the WSL-Kernel module and setting up GPU-PV in Linux guests.
+Notes and scripts for building the WSL-Kernel module and setting up GPU-PV in Linux guests.
 
 
 This uses drivers files provided by WSL2 on your Windows host and
