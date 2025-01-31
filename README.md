@@ -40,3 +40,21 @@ Step 10 reboot the VM
 
 Step 11 Verify gpu via dmesg / lspci and or nvidia-smi.
 ```
+
+
+
+```
+Other repos used for patches and info:
+https://github.com/thexperiments/dxgkrnl-dkms-git?tab=readme-ov-file
+https://github.com/staralt/dxgkrnl-dkms
+
+Scripts are based on information provided from:
+https://github.com/seflerZ/oneclick-gpu-pv
+https://github.com/staralt/dxgkrnl-dkms
+```
+
+This repo is meant to provide info for setting up the WSL kernel module on newer LTS kernels 6.x.
+
+GPU add script provided is meant let you select an each GPU for passthrough, and needs to be run again to add additional GPU's. 
+
+If you have multiple Nvidia devices you may need to all to each VM for nvidia-smi to function correctly. 
