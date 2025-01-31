@@ -1,0 +1,27 @@
+#make sure to set the username and IP. 
+#I recomend running these commands through a power shell console \ seperate from ISE as these are provided as seperate commands not a complete script.
+$username="user"
+$ip="IP"
+
+# Step 1
+ssh ${username}@${ip} "mkdir -p ~/wsl/drivers; mkdir -p ~/wsl/lib;"
+
+
+# Step 2
+(Get-CimInstance -ClassName Win32_VideoController -Property *).InstalledDisplayDrivers | Select-String "C:\\Windows\\System32\\DriverStore\\FileRepository\\[a-zA-Z0-9\\._]+\\" | foreach {
+    $l=$_.Matches.Value.Substring(0, $_.Matches.Value.Length-1)
+    scp -r $l ${username}@${ip}:~/wsl/drivers/
+}
+
+#Step 3
+scp -r "C:\Windows\System32\lxss\lib" ${username}@${ip}:~/wsl/
+scp -r "C:\Program Files\WSL\lib" ${username}@${ip}:~/wsl/
+ssh ${username}@${ip} "sudo -S chmod -R 555 ~/wsl"
+ssh ${username}@${ip} "sudo -S chown -R root:root ~/wsl"
+
+# Step 4
+ssh ${username}@${ip} "sudo -S mkdir -p $(echo /usr/lib/wsl/drivers/)"
+ssh ${username}@${ip} "sudo -S mv ~/wsl/lib/* /usr/lib;sudo -S ln -s /usr/lib/libd3d12core.so /usr/lib/libD3D12Core.so;sudo -S mv ~/wsl/drivers/* /usr/lib/wsl/drivers"
+
+# Step 5
+sudo sh -c 'echo "/usr/lib" > /etc/ld.so.conf.d/ld.wsl.conf'
