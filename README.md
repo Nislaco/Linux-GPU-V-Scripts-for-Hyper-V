@@ -32,7 +32,7 @@ Step 7 You will need to transfer over files from your windows host to your virtu
 
 This is done by going through the provided steps in file-move.txt
 
-Step 8 you will want to apt-get install "curl git dkms" to provided the dependancies for the kernel compilation script:
+Step 8 you will want to apt-get install "curl git dkms dwarves" to provided the dependancies for the kernel compilation script:
 
 Step 9 download and execute the provided build.sh; after this completes dkms status should show the module is installed. 
 
