@@ -59,6 +59,6 @@ https://github.com/staralt/dxgkrnl-dkms
 
 This repo is meant to provide info for setting up the WSL kernel module on newer LTS kernels 6.x.
 
-GPU add script provided is meant let you select an each GPU for passthrough, and needs to be run again to add additional GPU's. 
+GPU add script provided is meant to let you select each GPU to be utilized for passthrough, and needs to be run again to add additional GPU's. 
 
 If you have multiple Nvidia devices you may need to all to each VM for nvidia-smi to function correctly. 
