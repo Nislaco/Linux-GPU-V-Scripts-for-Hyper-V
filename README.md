@@ -62,7 +62,8 @@ This repo is meant to provide info for setting up the WSL kernel module on newer
 
 The provided scripts are working with linux kernels versions up to 6.9.x.
 Kernels 6.10 - 6.12 so far are not working with the provided scripts.
-Only up to kernel 6.8 has been tested on debian 12 bookworm.
+Only up to kernel 6.8 has been tested on Ubuntu 24.04 LTS.
+Kernel 6.9.10+bpo-amd64 tested on debian 12 bookworm via backports.
 
 GPU add script provided is meant to let you select each GPU to be utilized for passthrough, and needs to be run again to add additional GPU's. 
 
