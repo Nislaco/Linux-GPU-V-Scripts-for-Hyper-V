@@ -32,7 +32,7 @@ sed -i 's/\$(CONFIG_DXGKRNL)/m/' /usr/src/dxgkrnl-$VERSION/Makefile
 sed -i 's#<uapi/linux/eventfd.h>#<linux/eventfd.h>#g' /usr/src/dxgkrnl-$VERSION/include/linux/eventfd.h
 sed -i 's#linux/hyperv.h#linux/hyperv_dxgkrnl.h#' /usr/src/dxgkrnl-$VERSION/dxgmodule.c
 sed -i 's/l(event->cpu_event, 1)/l(event->cpu_event)/g' /usr/src/dxgkrnl-$VERSION/dxgmodule.c
-echo "EXTRA_CFLAGS=-I\$(PWD)/include -D_MAIN_KERNEL_ -DCONFIG_DXGKRNL=m -Wno-empty-body -Wno-int-conversion -Wno-implicit-function-declaration -Wno-int-to-pointer-cast -Wno-implicit -include /usr/src/dxgkrnl-$VERSION/include/extra-defines.h  -include /usr/src/dxgkrnl-$VERSION/include/linux/vmalloc.h  -include /usr/src/dxgkrnl-$VERSION/include/linux/kernel.h " >> /usr/src/dxgkrnl-$VERSION/Makefile
+echo "EXTRA_CFLAGS=-I\$(PWD)/include -D_MAIN_KERNEL_ -DCONFIG_DXGKRNL=m -include /usr/src/dxgkrnl-$VERSION/include/extra-defines.h -include /usr/src/dxgkrnl-$VERSION/include/linux/vmalloc.h -include /usr/src/dxgkrnl-$VERSION/include/linux/kernel.h " >> /usr/src/dxgkrnl-$VERSION/Makefile
 
 cat > /usr/src/dxgkrnl-$VERSION/dkms.conf <<EOF
 PACKAGE_NAME="dxgkrnl"
