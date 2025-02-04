@@ -50,12 +50,14 @@ Tested on Ubuntu 24 with ubuntu-wsl selection and Debian 12 with Debian Selectio
 
 ```
 Other repos used for patches and info:
-https://github.com/thexperiments/dxgkrnl-dkms-git?tab=readme-ov-file
+https://github.com/thexperiments/dxgkrnl-dkms-git
 https://github.com/staralt/dxgkrnl-dkms
-
-Scripts are based on information provided from:
 https://github.com/seflerZ/oneclick-gpu-pv
-https://github.com/staralt/dxgkrnl-dkms
+https://gist.github.com/krzys-h/e2def49966aa42bbd3316dfb794f4d6a
+https://github.com/brokeDude2901/dxgkrnl_ubuntu/tree/main
+https://gist.github.com/OlfillasOdikno/f87a4444f00984625558dad053255ace
+https://unix.stackexchange.com/questions/762985/compiling-external-kernel-module-fails-on-debian-bookworm-due-to-missing-resolve
+https://qask.org/ubuntu/2022/10/25/skipping-btf-generation-xxx-due-to-unavailability-of-vmlunux-on-ubuntu-21-04-generic-version
 ```
 
 This repo is meant to provide info for setting up the WSL kernel module on newer LTS kernels 6.x.
