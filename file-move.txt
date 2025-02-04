@@ -2,7 +2,8 @@
 #  It is recomend running these commands through a power shell console 
 $username="user"
 $ip="IP"
-# Hyper-v is not great about not leasing IP's already in use. 
+
+# Hyper-v is not great about not leasing IP's already in use when assigning an actual device as network connection.
 # If connections to VM fail from remote hosts, please use an IP scanner like Wakemeonlan or angryip to verify your VM
 # is not assinged an ip in use somewhere else on your network such as a printer or dev board or laptop etc.
 
