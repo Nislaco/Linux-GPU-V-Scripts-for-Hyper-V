@@ -2,8 +2,8 @@
 Notes and scripts for building the WSL-Kernel module and setting up GPU-PV in Linux guests.
 
 
-This uses drivers files provided by WSL2 on your Windows host and
-compiles the WSL Kernel module via github within a Hyper-v guest.
+This uses the hosts installed GPU drivers and files provided by WSL2 on your Windows host to
+compile the Microsoft WSL Kernel module from github within a Linux Hyper-v guest running LTS/Generic/AMD64 6.6 - 6.9 kernels.
 
 These are the folders on windows host with relavent files. 
 Please install WSL2 and or run wsl update to provide these files.
