@@ -70,6 +70,12 @@ Kernels 6.10 - 6.12 so far are not working with the provided scripts.
 
 Only up to kernel 6.8.0-52-generic has been tested on Ubuntu 24.04 LTS.
 
+![image](https://github.com/user-attachments/assets/68dde6db-babf-4f30-911c-f0a3caacf0b9)
+
+
+![image](https://github.com/user-attachments/assets/ad1afa99-8cf3-497e-989a-0d9c8e08dfd5)
+
+
 Kernel 6.9.10+bpo-amd64 tested on debian 12 bookworm via backports.
 
 GPU add script provided is meant to let you select each GPU to be utilized for passthrough, and needs to be run again to add additional GPU's. 
