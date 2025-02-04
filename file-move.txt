@@ -7,25 +7,25 @@ $ip="IP"
 # If connections to VM fail from remote hosts, please use an IP scanner like Wakemeonlan or angryip to verify your VM
 # is not assinged an ip in use somewhere else on your network such as a printer or dev board or laptop etc.
 
-# Step 1 (This create the folders where drivers and libraries are stored when being transfered from host.)
+# Step 1 (This create the folders where drivers and libraries are stored when being transfered from host to guest.)
 ssh ${username}@${ip} "mkdir -p ~/wsl/drivers; mkdir -p ~/wsl/lib;"
 
 
-# Step 2 (This moves over the drive files needed from the host.)
+# Step 2 (This moves over the driver files needed from the host to guest.)
 (Get-CimInstance -ClassName Win32_VideoController -Property *).InstalledDisplayDrivers | Select-String "C:\\Windows\\System32\\DriverStore\\FileRepository\\[a-zA-Z0-9\\._]+\\" | foreach {
     $l=$_.Matches.Value.Substring(0, $_.Matches.Value.Length-1)
     scp -r $l ${username}@${ip}:~/wsl/drivers/
 }
 
 
-#Step 3 (This moves over the libraries needed from the host and sets proper permissions.)
+#Step 3 (This moves over the libraries needed from the host and sets proper permissions on guest.)
 scp -r "C:\Windows\System32\lxss\lib" ${username}@${ip}:~/wsl/
 scp -r "C:\Program Files\WSL\lib" ${username}@${ip}:~/wsl/
 ssh ${username}@${ip} "sudo -S chmod -R 555 ~/wsl"
 ssh ${username}@${ip} "sudo -S chown -R root:root ~/wsl"
 
 
-# Step 4 (This relocates the library and driver files to the needed location.)
+# Step 4 (This relocates the library and driver files from temp location over to the required location.)
 ssh ${username}@${ip} "sudo -S mkdir -p $(echo /usr/lib/wsl/drivers/)"
 ssh ${username}@${ip} "sudo -S mkdir -p $(echo /usr/lib/wsl/lib/)"
 ssh ${username}@${ip} "sudo -S mv ~/wsl/lib/* /usr/lib/wsl/lib;sudo -S ln -s /usr/lib/wsl/lib/libd3d12core.so /usr/lib/wsl/lib/libD3D12Core.so;sudo -S mv ~/wsl/drivers/* /usr/lib/wsl/drivers"
@@ -37,4 +37,4 @@ ssh ${username}@${ip} "sudo -S ldconfig"
 ssh ${username}@${ip} "sudo -S echo "'export PATH=$PATH:/usr/lib/wsl/lib'" | sudo -S tee '/etc/profile.d/wsl.sh'"
 ssh ${username}@${ip} "sudo -S chmod +x /etc/profile.d/wsl.sh"
 
-#Step 6 reboot and run  /usr/lib/wsl/lib/nvidia-smi / to verify cards are detected properly.
+#Step 6 reboot and run  /usr/lib/wsl/lib/nvidia-smi / to verify nvidia cards are detected properly. 
