@@ -4,15 +4,9 @@
 Please reference the link and the instructions to pull the tool from the linux source and add to the system.
 
 apt install linux-source-6.1
-apt install locate
-updatedb
-#locate  resolve_btfids
-locate  linux-source-6.1.tar.xz
-
 cd /usr/src/
 tar xvf linux-source-6.1.tar.xz
-find linux-source-6.1 | grep resolve_btfids
 cd linux-source-6.1/tools/bpf/resolve_btfids
 make
-mkdir -p /usr/src/linux-headers-`uname -r`/tools/bpf
-ln -s /usr/src/linux-source-6.1/tools/bpf/resolve_btfids/resolve_btfids /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids
+mkdir -p /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids
+ln -s /usr/src/linux-source-6.1/tools/bpf/resolve_btfids/resolve_btfids /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids/resolve_btfids
