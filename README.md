@@ -18,7 +18,9 @@ Step 1 create a Generation2 guest with these services disabled secure boot, dyna
 
 Step 2 make sure not to use quick create and choose to install operating system later.
 
-Step 3 select either an Ubuntu or Debian installation ISO and set this up as a boot device. Tested with Debian 12 bookworm and Ubuntu 24.04.
+Step 3 select either an Ubuntu or Debian installation ISO and set this up as a boot device.
+
+Tested with Debian 12 bookworm and Ubuntu 24.04.
 
 Step 4 you will need to close machine config and reneter to change boot device to cdrom/iso.
 
