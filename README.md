@@ -68,7 +68,7 @@ The provided scripts are working with linux kernels versions up to 6.9.x.
 
 Kernels 6.10 - 6.12 so far are not working with the provided scripts.
 
-Only up to kernel 6.8 has been tested on Ubuntu 24.04 LTS.
+Only up to kernel 6.8.0-52-generic has been tested on Ubuntu 24.04 LTS.
 
 Kernel 6.9.10+bpo-amd64 tested on debian 12 bookworm via backports.
 
