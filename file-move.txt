@@ -1,5 +1,5 @@
 #  make sure to set the username and IP. 
-#  It is recomend running these commands through a power shell console 
+#  It is recomend to run these commands through a power shell console.
 $username="user"
 $ip="IP"
 
