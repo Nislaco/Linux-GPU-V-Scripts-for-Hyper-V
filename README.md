@@ -32,7 +32,7 @@ Step 6 Run Linux-GPU-adder.ps1 and select a GPU or GPU's to be partitioned in yo
 
 Step 7 You will need to transfer over files from your windows host to your virtual machine.
 
-This is done by going through the provided steps in file-move.txt
+This is done by going through the provided steps in "file-move-nv.txt" or "file-move-wsl".txt
 
 Step 8 you will want to apt-get install "curl git dkms dwarves" to provided the dependancies for the kernel compilation script:
 
