@@ -1,0 +1,29 @@
+$username="user"
+$ip="ip"
+
+ssh ${username}@${ip} "mkdir -p ~/wsl/drivers; mkdir -p ~/wsl/lib;";
+
+(Get-CimInstance -ClassName Win32_VideoController -Property *).InstalledDisplayDrivers | Select-String "C:\\Windows\\System32\\DriverStore\\FileRepository\\[a-zA-Z0-9\\._]+\\" | foreach {
+    $l=$_.Matches.Value.Substring(0, $_.Matches.Value.Length-1)
+    scp -r $l ${username}@${ip}:~/wsl/drivers/
+}
+
+scp -r "C:\Program Files\WSL\lib" ${username}@${ip}:~/wsl/;
+ssh ${username}@${ip} "sudo -S cp ~/wsl/drivers/nv_dispi.inf_amd64_adf5a840df867035/nvidia-smi  ~/wsl/lib/.";
+ssh ${username}@${ip} "sudo -S cp ~/wsl/drivers/nv_dispi.inf_amd64_adf5a840df867035/*.so*  ~/wsl/lib/.";
+ssh ${username}@${ip} "sudo -S chmod -R 555 ~/wsl";
+ssh ${username}@${ip} "sudo -S chown -R root:root ~/wsl";
+
+ssh ${username}@${ip} "sudo -S mkdir -p $(echo /usr/lib/wsl/drivers/)";
+ssh ${username}@${ip} "sudo -S mkdir -p $(echo /usr/lib/wsl/lib/)";
+
+ssh ${username}@${ip} "sudo -S mv ~/wsl/lib/* /usr/lib/wsl/lib;sudo -S ln -s /usr/lib/wsl/lib/libd3d12core.so /usr/lib/wsl/lib/libD3D12Core.so;sudo -S mv ~/wsl/drivers/* /usr/lib/wsl/drivers"
+ssh ${username}@${ip} "sudo -S ln -s /usr/lib/wsl/lib/libcuda.so.1.1 /usr/lib/wsl/lib/libcuda.so.1;sudo -S ln -s /usr/lib/wsl/lib/libcuda.so.1 /usr/lib/wsl/lib/libcuda.so;sudo -S ln -s /usr/lib/wsl/lib/libnvoptix_loader.so.1 /usr/lib/wsl/lib/libnvoptix.so.1"
+ssh ${username}@${ip} "sudo -S echo '/usr/lib/wsl/lib' | sudo -S  tee '/etc/ld.so.conf.d/ld.wsl.conf'"
+ssh ${username}@${ip} "sudo -S mv /usr/lib/wsl/lib/libnvidia-ml.so.1 /usr/lib/wsl/lib/libnvidia-ml.so.1.1"
+ssh ${username}@${ip} "sudo -S ln -s /usr/lib/wsl/lib/libnvidia-ml.so.1.1 /usr/lib/wsl/lib/libnvidia-ml.so.1"
+ssh ${username}@${ip} "sudo -S ln -s /usr/lib/wsl/lib/libnvidia-ml.so.1 /usr/lib/wsl/lib/libnvidia-ml.so"
+ssh ${username}@${ip} "sudo -S ldconfig"
+
+ssh ${username}@${ip} "sudo -S echo "'export PATH=$PATH:/usr/lib/wsl/lib'" | sudo -S tee '/etc/profile.d/wsl.sh'"
+ssh ${username}@${ip} "sudo -S chmod +x /etc/profile.d/wsl.sh"
