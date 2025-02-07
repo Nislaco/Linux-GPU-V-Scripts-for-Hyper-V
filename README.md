@@ -64,19 +64,26 @@ https://qask.org/ubuntu/2022/10/25/skipping-btf-generation-xxx-due-to-unavailabi
 
 This repo is meant to provide info for setting up the WSL kernel module on newer LTS kernels 6.x.
 
-The provided scripts are working with linux kernels versions up to 6.9.x.
+The provided scripts are working with linux kernels versions up to 6.12.x.
 
-Kernels 6.10 - 6.12 so far are not working with the provided scripts.
+Specifically kernels 6.1, 6.8, 6.9, and 6.12 have been tested with the provided scripts.
 
 Only up to kernel 6.8.0-52-generic has been tested on Ubuntu 24.04 LTS.
 
 ![image](https://github.com/user-attachments/assets/68dde6db-babf-4f30-911c-f0a3caacf0b9)
 
+Kernel 6.9.10+bpo-amd64 tested on debian 12 bookworm via backports.
 
 ![image](https://github.com/user-attachments/assets/ad1afa99-8cf3-497e-989a-0d9c8e08dfd5)
 
+Kernel 6.12.11 tested working on debian 13 trixie 
+![image](https://github.com/user-attachments/assets/d97c93c4-2295-4eac-a9a9-97b5c3d3ae06)
 
-Kernel 6.9.10+bpo-amd64 tested on debian 12 bookworm via backports.
+
+Kernel 6.12.11-220 working from fedora 41:
+
+![image](https://github.com/user-attachments/assets/22b2b8f4-5f7c-4738-ba02-f3ac9139e010)
+
 
 GPU add script provided is meant to let you select each GPU to be utilized for passthrough, and needs to be run again to add additional GPU's. 
 
