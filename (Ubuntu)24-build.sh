@@ -30,7 +30,6 @@ cp -r drivers/hv/dxgkrnl /usr/src/dxgkrnl-$VERSION
 mkdir -p /usr/src/dxgkrnl-$VERSION/include/uapi/misc
 mkdir -p /usr/src/dxgkrnl-$VERSION/include/linux
 mkdir -p /usr/src/dxgkrnl-$VERSION/include/libdxg
-mkdir -p /usr/src/dxgkrnl-$VERSION/mm
 cp -r /tmp/libdxg/include/* /usr/src/dxgkrnl-$VERSION/include/libdxg/
 cp include/uapi/misc/d3dkmthk.h /usr/src/dxgkrnl-$VERSION/include/uapi/misc/d3dkmthk.h
 cp include/linux/hyperv.h /usr/src/dxgkrnl-$VERSION/include/linux/hyperv_dxgkrnl.h
