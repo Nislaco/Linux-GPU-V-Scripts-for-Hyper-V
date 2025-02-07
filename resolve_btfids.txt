@@ -1,9 +1,9 @@
-#Without resolve_btfids the dkms module will not compile successfully:
-#https://unix.stackexchange.com/questions/762985/compiling-external-kernel-module-fails-on-debian-bookworm-due-to-missing-resolve
+# Without resolve_btfids the dkms module will not compile successfully:
+# https://unix.stackexchange.com/questions/762985/compiling-external-kernel-module-fails-on-debian-bookworm-due-to-missing-resolve
 
-#Please reference the link and the instructions to pull these tool from the linux source and add to the system if needed.
-#Typically they should be included in the headers or kernel-tools package.
-#However with these instructions they can be compiled from the linux source code if needed. 
+# Please reference the link and the instructions to pull these tool from the linux source and add to the system if needed.
+# Typically they should be included in the headers or kernel-tools package.
+# However with these instructions they can be compiled from the linux source code if needed. 
 
 apt install linux-source-6.1
 cd /usr/src/
