@@ -20,7 +20,7 @@ Step 2 make sure not to use quick create and choose to install operating system 
 
 Step 3 select either an Ubuntu or Debian installation ISO and set this up as a boot device.
 
-Tested with Debian 12 bookworm and Ubuntu 24.04.
+Tested with Debian 12 bookworm, Debian 13 Trixie, Ubuntu 24.04, and Fedora 41.
 
 Step 4 you will need to close machine config and reneter to change boot device to cdrom/iso.
 
@@ -36,7 +36,7 @@ This is done by going through the provided steps in "file-move-nv.txt" or "file-
 
 Step 8 you will want to apt-get install "curl git dkms dwarves" to provided the dependancies for the kernel compilation script:
 
-Step 9 download and execute the provided build.sh; after this completes dkms status should show the module is installed.
+Step 9 download and execute the appropriate build.sh for your linux distro; after this completes dkms status should show the module is installed.
 Step 9a if using debian you will need to also run through resolve_btfids.txt before running build.sh.
 
 Step 10 reboot the VM
