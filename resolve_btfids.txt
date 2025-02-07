@@ -1,7 +1,9 @@
 #Without resolve_btfids the dkms module will not compile successfully:
 #https://unix.stackexchange.com/questions/762985/compiling-external-kernel-module-fails-on-debian-bookworm-due-to-missing-resolve
 
-Please reference the link and the instructions to pull the tool from the linux source and add to the system.
+#Please reference the link and the instructions to pull these tool from the linux source and add to the system if needed.
+#Typically they should be included in the headers or kernel-tools package.
+#However with these instructions they can be compiled from the linux source code if needed. 
 
 apt install linux-source-6.1
 cd /usr/src/
@@ -10,3 +12,9 @@ cd linux-source-6.1/tools/bpf/resolve_btfids
 make
 mkdir -p /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids
 ln -s /usr/src/linux-source-6.1/tools/bpf/resolve_btfids/resolve_btfids /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids/resolve_btfids
+
+# objtool is also needed.
+cd /usr/src/linux-source-6.1/tools/objtool/
+make
+mkdir -p /usr/src/linux-headers-`uname -r`/tools/objtool
+ln -s /usr/src/linux-source-6.1/tools/objtool/objtool /usr/src/linux-headers-`uname -r`/tools/objtool/objtool
