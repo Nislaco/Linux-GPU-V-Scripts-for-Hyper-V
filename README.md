@@ -68,7 +68,7 @@ The provided scripts are working with linux kernels versions up to 6.12.x.
 
 Specifically kernels 6.1, 6.8, 6.9, and 6.12 have been tested with the provided scripts.
 
-Only up to kernel 6.8.0-52-generic has been tested on Ubuntu 24.04 LTS.
+Only up to kernel 6.8.0-52-generic has been tested on Ubuntu 24.04 LTS. Currently 6.11 is working on Ubuntu 24.10 via the same script.
 
 ![image](https://github.com/user-attachments/assets/68dde6db-babf-4f30-911c-f0a3caacf0b9)
 
