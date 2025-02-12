@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]; then
     exec sudo $0 "$@"
 fi
 
-apt-get install -y git dkms curl dwarves  linux-source-6.12 linux-headers-amd64
+apt-get install -y git dkms curl dwarves  linux-source-6.12 linux-headers-amd64 pahole
 
 This installs resolve_btfids and objtool which is needed with vmlinux for proper compilation.
 cd /usr/src/
