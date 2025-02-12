@@ -1,3 +1,4 @@
+#!/bin/bash -e
 BRANCH=linux-msft-wsl-6.6.y
 DXBRANCH=main
 
