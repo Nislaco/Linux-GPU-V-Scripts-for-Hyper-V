@@ -62,6 +62,6 @@ AUTOINSTALL="yes"
 EOF
 
 
-dkms add dxgkrnl/$VERSION
-dkms build dxgkrnl/$VERSION
-dkms install dxgkrnl/$VERSION
+sudo dkms add dxgkrnl/$VERSION
+sudo dkms build dxgkrnl/$VERSION
+sudo dkms install dxgkrnl/$VERSION
