@@ -47,7 +47,7 @@ sed -i 's/\$(CONFIG_DXGKRNL)/m/' /usr/src/dxgkrnl-$VERSION/Makefile
 sed -i 's#<uapi/linux/eventfd.h>#<linux/eventfd.h>#g' /usr/src/dxgkrnl-$VERSION/include/linux/eventfd.h
 sed -i 's#linux/hyperv.h#linux/hyperv_dxgkrnl.h#' /usr/src/dxgkrnl-$VERSION/dxgmodule.c
 sed -i 's/l(event->cpu_event, 1)/l(event->cpu_event)/g' /usr/src/dxgkrnl-$VERSION/dxgmodule.c
-echo "EXTRA_CFLAGS=-I\$(PWD)/include -D_MAIN_KERNEL_ -DCONFIG_DXGKRNL=m -include /usr/src/dxgkrnl-$VERSION/include/extra-defines.h -I /usr/src/dxgkrnl-$VERSION/include/libdxg/ -I /usr/src/linux-headers-6.12.11-common/include/linux/ -include /usr/src/linux-headers-6.12.11-common/include/linux/vmalloc.h -include /usr/src/dxgkrnl-$VERSION/include/uapi/misc/d3dkmthk.h    -Wno-empty-body" >> /usr/src/dxgkrnl-$VERSION/Makefile
+echo "EXTRA_CFLAGS=-I\$(PWD)/include -D_MAIN_KERNEL_ -DCONFIG_DXGKRNL=m -include /usr/src/dxgkrnl-$VERSION/include/extra-defines.h -I /usr/src/dxgkrnl-$VERSION/include/libdxg/ -I /usr/src/linux-source-6.12/include/linux/ -include /usr/src/linux-source-6.12/include/linux/vmalloc.h -include /usr/src/dxgkrnl-$VERSION/include/uapi/misc/d3dkmthk.h    -Wno-empty-body" >> /usr/src/dxgkrnl-$VERSION/Makefile
 wget https://raw.githubusercontent.com/MBRjun/dxgkrnl-dkms-lts/master/extra-defines.h
 cp extra-defines.h  /usr/src/dxgkrnl-$VERSION/include/extra-defines.h
 cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/
