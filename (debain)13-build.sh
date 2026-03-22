@@ -12,10 +12,10 @@ apt-get install -y git dkms curl dwarves  linux-source-6.12 linux-headers-amd64 
 #This installs resolve_btfids and objtool which is needed with vmlinux for proper compilation.
 cd /usr/src/
 tar xvf linux-source-6.12.tar.xz
-cd linux-source-6.12/tools/bpf/resolve_btfids
-make
-mkdir -p /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids
-ln -s /usr/src/linux-source-6.12/tools/bpf/resolve_btfids/resolve_btfids /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids/resolve_btfids
+#cd linux-source-6.12/tools/bpf/resolve_btfids
+#make
+#mkdir -p /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids
+#ln -s /usr/src/linux-source-6.12/tools/bpf/resolve_btfids/resolve_btfids /usr/src/linux-headers-`uname -r`/tools/bpf/resolve_btfids/resolve_btfids
 
 cd /tmp
 git clone -b $DXBRANCH  --no-checkout  --depth=1 https://github.com/microsoft/libdxg.git
