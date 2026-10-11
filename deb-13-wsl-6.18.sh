@@ -41,6 +41,7 @@ cp include/hyperv/hvhdk.h /usr/src/dxgkrnl-$VERSION/include/hyperv/hvhdk.h
 cp include/hyperv/hvhdk_mini.h /usr/src/dxgkrnl-$VERSION/include/hyperv/hvhdk_mini.h
 cp include/hyperv/hvgdk.h /usr/src/dxgkrnl-$VERSION/include/hyperv/hvgdk.h
 cp include/hyperv/hvgdk_ext.h /usr/src/dxgkrnl-$VERSION/include/hyperv/hvgdk_ext.h
+cp include/hyperv/hvgdk_mini.h /usr/src/dxgkrnl-$VERSION/include/hyperv/hvgdk_mini.h
 sed -i 's/\$(CONFIG_DXGKRNL)/m/' /usr/src/dxgkrnl-$VERSION/Makefile
 sed -i 's#<uapi/linux/eventfd.h>#<linux/eventfd.h>#g' /usr/src/dxgkrnl-$VERSION/include/linux/eventfd.h
 sed -i 's#linux/hyperv.h#linux/hyperv_dxgkrnl.h#' /usr/src/dxgkrnl-$VERSION/dxgmodule.c
