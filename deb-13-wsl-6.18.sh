@@ -47,7 +47,8 @@ sed -i 's#<uapi/linux/eventfd.h>#<linux/eventfd.h>#g' /usr/src/dxgkrnl-$VERSION/
 sed -i 's#linux/hyperv.h#linux/hyperv_dxgkrnl.h#' /usr/src/dxgkrnl-$VERSION/dxgmodule.c
 sed -i 's/l(event->cpu_event, 1)/l(event->cpu_event)/g' /usr/src/dxgkrnl-$VERSION/dxgmodule.c
 # =====================================================================
-# KERNEL 6.12+ COMPATIBILITY PATCHES
+# KERNEL 6.12+ COMPATIBILITY PATCHES / Code in this section from Google AI 
+# Tested and verified by Nislaco
 # =====================================================================
 
 ## Fix 1: Update __dma_fence_is_later multi-line argument mapping in dxgsyncfile.c
